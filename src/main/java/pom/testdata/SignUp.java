@@ -1,5 +1,6 @@
-package pom.testdata.pages;
+package pom.testdata;
 
+import utils.RandomGenerator;
 import utils.Reader;
 
 public class SignUp {
@@ -14,6 +15,14 @@ public class SignUp {
      this.email = Reader.json(filename).get("email").toString();
      this.password = Reader.json(filename).get("password").toString();
  }
+
+    public SignUp() {
+     this.firstName = RandomGenerator.stringValue(5);
+     this.lastName = RandomGenerator.stringValue(6);
+     this.email = RandomGenerator.stringValue(7) + "@gmail.com";
+     this.password = RandomGenerator.stringValue(8);
+    }
+
 
 
     public String getFirstName() {

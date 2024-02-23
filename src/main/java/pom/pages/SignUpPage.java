@@ -3,7 +3,7 @@ package pom.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pom.testdata.pages.SignUp;
+import pom.testdata.SignUp;
 
 public class SignUpPage {
     WebDriver driver;

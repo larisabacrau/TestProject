@@ -2,7 +2,6 @@ package pom.tests;
 
 import org.junit.Before;
 import org.junit.Test;
-import pom.testdata.pages.SignUp;
 import pom.testdata.pages.SignUpTD;
 
 import static org.junit.Assert.assertEquals;
@@ -18,23 +17,23 @@ public class SignUpTest extends BaseTest {
 
     @Test
     public void signUpTest() {
-        signUpPage.signUp(signUp);
+        signUpPage.signUp(signUpData);
         assertEquals("Logout", signUpPage.findLogoutButton().getText());
     }
     @Test
     public void whenSignUpWithoutFirstName_shouldFirstNameRequired() throws InterruptedException {
-        SignUp invalidSignUp1 = new SignUp("signup_invalid_firstName");
+        signUpData.setFirstName("");
 
-        signUpPage.signUp(invalidSignUp1);
+        signUpPage.signUp(signUpData);
         Thread.sleep(1000);
         assertEquals(SignUpTD.FIRST_NAME_ERROR,signUpPage.getErrorMessage().getText());
 
     }
     @Test
     public void whenSignUpWithoutLastname_shouldLastNameRequired() throws InterruptedException {
-        SignUp invalidSignUp2 = new SignUp("signup_invalid_lastName");
+        signUpData.setLastName("");
 
-        signUpPage.signUp(invalidSignUp2);
+        signUpPage.signUp(signUpData);
         Thread.sleep(1000);
         assertEquals(SignUpTD.LAST_NAME_ERROR, signUpPage.getErrorMessage().getText());
 
@@ -42,9 +41,9 @@ public class SignUpTest extends BaseTest {
 
     @Test
     public void whenSignUpWithoutEmail_shouldEmailIsInvalid() throws InterruptedException {
-        SignUp invalidSignUp3 = new SignUp("signup_invalid_email");
+        signUpData.setEmail("");
 
-        signUpPage.signUp(invalidSignUp3);
+        signUpPage.signUp(signUpData);
         Thread.sleep(1000);
         assertEquals(SignUpTD.EMAIL_ERROR,signUpPage.getErrorMessage().getText());
     }

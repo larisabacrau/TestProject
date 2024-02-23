@@ -8,9 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import pom.pages.*;
 import pom.testdata.Contact;
 import pom.testdata.User;
-import pom.testdata.pages.SignUp;
+import pom.testdata.SignUp;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -23,9 +22,9 @@ public class BaseTest {
     public EditContactPage editContactPage;
     public DeleteContactPage deleteContactPage;
 
-    public User user = new User("login_valid");
-    public Contact contact = new Contact("addContact_valid");
-    public SignUp signUp = new SignUp("signup_valid");
+    public User userData = new User("login_valid");
+    public Contact contactData = new Contact("addContact_valid");
+    public SignUp signUpData = new SignUp();
 
     @After
     public void tearDown() {
