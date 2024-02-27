@@ -1,0 +1,1 @@
+This is an assignment project I worked on during the automation testing course I have been attending. It contains my work using Selenium, IntelliJ, Java, JUnit, Gradle and Chrome. I applied a POM pattern while keeping in mind OOP principles using different test data management types like JSON files.
